@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Robota-Regular';
+    src:local('Robota');
+    src:url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Robota-Bold';
+    src:local('Robota');
+    src:url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Philosopher-Regular';
+    src:local('Philosopher');
+    src:url(../fonts/Philosopher-Regular.ttf);
+}
+
+body {
+    background-color: #ffe2b0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+nav {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.navigation__list {
+    list-style-type: none;
+    padding: 0px;
+    font-family: 'Robota-Bold', sans-serif;
+}
+
+.navigation__list li {
+    display: inline;
+    margin-right: 100px;
+}
+
+/* убираем отступ у последнего элемента списка через псевдокласс */
+li:last-child {
+    margin-right: 0px;
+}
+
+.navigation__list a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navigation__list a:hover {
+    color: rgb(227, 252, 255);
+    font-size: 20px;
+}
+
+.section_main_photo {
+    height: 640px;
+    background: url(../img/01-background-img.jpg) center/cover;
+
+    margin-bottom: 20px;
+}
+
+.section_main_photo__block {
+    width: 420px;
+    height: 190px;
+    background: linear-gradient(180deg, rgba(244, 213,178, 0.8) 0%, rgba(234, 156, 65, 0.8) 100%);
+    
+    position: relative;
+    top: 54%;
+    left: 51%;
+
+    text-align: center;
+
+    /* толкает рамку от верхней границы блока */
+    padding-top: 15px;
+}
+
+.section_main_photo__border {
+    height: 160px;
+    width: 390px;
+    border: 1px #000000 solid;
+    margin: 0 auto;
+    
+    /* толкаем текст от границ рамки */
+    padding-top: 17px;
+    padding-left: 28px;
+
+    text-align: left;
+}
+
+.section_main__title {
+    font-size: 34px;
+    margin: 0;
+    margin-bottom: 9px;
+
+    font-family: 'Philosopher-Regular', sans-serif;
+}
+
+.section_main__text {
+    font-size: 16px;
+    margin: 0;
+
+    font-family: 'Robota-Regular', sans-serif;
+}
+
+.second_section {
+    margin-bottom: 30px;
+}
+
+.second_section__icons {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.second_section__icons img {
+    margin-right: 76px;
+}
+
+.second_section__icons img:last-child {
+    margin-right: 0px;
+}
+
+.second_section__text__title {
+    font-size: 96px;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 15px;
+
+    font-family: 'Philosopher-Regular', sans-serif;
+}
+
+.red {
+    color: #f15b40;
+}
+
+.second_section__text__text {
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+
+    width: 1000px;
+    font-family: 'Robota-Regular', sans-serif;
+}
+
+.section_third {
+    margin-bottom: 20px;
+}
+
+.section_third__title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+
+    font-family: 'Philosopher-Regular', sans-serif;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+.footer__ {
+    height: 70px;
+}
+
+.footer__line {
+    border: none;
+    width: 900px;
+    border-top: 1px solid #999999;
+    margin: 0 auto;
+
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Robota!';
+}
