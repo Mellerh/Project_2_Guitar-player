@@ -4,71 +4,338 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магазин выпечки</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <!-- важна очерёдность подключения стилей -->
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <meta name="description" content="Очень очень вкусно">
+    <title>Уроки игры на гитаре</title>
+    <!-- название сайта -->
+    <meta name="description" content="Лучший репетитор игры на гитаре в Москве!">
+
+    <!-- fav-icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/fav-icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icons/fav-icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/fav-icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/fav-icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/fav-icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/fav-icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/fav-icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/fav-icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/fav-icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="icons/fav-icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/fav-icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/fav-icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/fav-icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/fav-icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <!-- здесь тоже указываем путь -->
+    <meta name="msapplication-TileImage" content="icons/fav-icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
 
-    <header>
-        <img src="icons/01-Logo.svg" alt="Логотип">
-    </header>
-    <nav>
-        <ul class="navigation__list">
-            <li><a href="#second_section">О НАС</a></li>
-            <li><a href="#">НОВОСТИ</a></li>
-            <li><a href="#">МЕНЮ</a></li>
-            <li><a href="#section_third">КОНТАКТЫ</a></li>
-        </ul>
-    </nav>
+    <!-- первая секция -->
+    <section class="main-section">
 
-    <main>
-        <section class="section_main_photo">
-             <div class="section_main_photo__block">
-                <div class="section_main_photo__border">
-                    <h1 class="section_main__title">Выпечка?</h1>
-                    <p class="section_main__text">Выпечка — общее название для хлебобулочных изделий и кондитерских изделий, изготавливаемых методом выпекания.</p>
+        <!-- лого и навигационное меню -->
+        <div class="container main-section__nav-container">
+            <!-- лого -->
+            <header class="main-section__header">
+                <a href="#"><img class="main-section__logo" src="icons/первая секция/main_logo_guitar-school.svg" alt=""></a>
+            </header>
+            <!-- навигационное меню -->
+            <nav class="main-section__nav nav-menu">
+                <ul class="nav-menu__list">
+                    <li class="nav-menu__list-item"><a href="#about-me">Обо мне</a></li>
+                    <li class="nav-menu__list-item"><a href="#lessons">Занятия</a></li>
+                    <li class="nav-menu__list-item"><a href="#">Запись</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <!-- левая и правая часть секции -->
+        <div class="container main-section__content-container">
+
+            <!-- левый круг, который будет скрываться при уменьшении окна экрана -->
+            <div class="main-section__left-ellipse ellipse">
+                <div class="ellipse__subtract"></div>
+            </div>
+
+               <!-- создаём внутренний круг справа -->
+            <div class="main-section__first-ellipse ellipse">
+                <div class="ellipse__subtract"></div>
+            </div>
+
+<!--left-wrapper И right-wrapper ДОЛЖНЫ БЫЛИ НАЧИНАТЬСЯ С НАЗВАНИЯ main-section. ТО ЕСТЬ main-section__left-wrapper. В ТРЕТЬЕЙ СЕКЦИИ МЫ ЭТО ИСПРАВИМ -->
+
+            <!-- левая часть, гитарист и фигуры -->
+            <div class="left-wrapper">
+                <img class="left-wrapper__img" src="img/Guitar player photo.svg" alt="Guitar player" height="700px">
+
+                <!-- прямоугольники -->
+                <div class="left-wrapper__rectangle-blue"></div>
+                <div class="left-wrapper__rectangle-orange"></div>
+                <div class="left-wrapper__rectangle-cream"></div>
+            </div>
+
+
+            <!-- правая часть секции, иконки, кнопки, текст-->
+            <div class="right-wrapper">
+                <!-- web иконки -->
+                <div class="right-wrapper__web-icons web-icons">
+                    <!-- создаём иконки с ссылками -->
+                    <div class="web-icons__item">
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="icons/instagramm 1.svg" alt="instagram">
+                        </a>
+                    </div>
+                    <div class="web-icons__item">
+                        <a href="https://vk.com" target="_blank">
+                            <img src="icons/vk 1.svg" alt="vkontakte">
+                        </a>
+                    </div>
+                    <div class="web-icons__item">
+                        <a href="https://www.skype.com/ru/" target="_blank">
+                            <img src="icons/skype.svg" alt="skype">
+                        </a>
+                    </div>
+                    <div class="web-icons__item">
+                        <a href="https://web.telegram.org/" target="_blank">
+                            <img src="icons/telegramm.svg" alt="telegramm">
+                        </a>
+                    </div>
                 </div>
-             </div>
-        </section>
 
-        <section class="second_section" id="second_section">
-            <div class="second_section__icons">
-                <img src="icons/03-icon.svg" alt="icon_1">
-                <img src="icons/02-icon.svg" alt="icon_2">
-                <img src="icons/01-icon.svg" alt="icon_3"> 
+                <!-- создаём тайлтл и линию по методологии БЭМ + текст-->
+                <h1 class="right-wrapper__title title">Я Виктор
+                    <img class="title__line" src="img/Line 1.svg" alt="линию" style="left: 4px;">
+                    <!-- второй вариант линии через css -->
+                    <!-- <hr class="title__line"> -->
+                </h1>
+                <p class="right-wrapper__text text">Репетитор игры на гитаре <br>с семилетним опытом преподавания. </p>
+
+                <!-- создаём кнопку и иконку с текстом-->
+                <div class="right-wrapper__buttons button">
+                    <!-- кнопка -->
+                        <button class="button__book-a-lesson">
+                            <a class="button__white-reference" href="#">Забронировать <br> урок</a>
+                        </button>
+
+                    <!-- иконка с текстом -->
+                    <div class="right-wrapper__icon-questions button__icon-questions">
+                        <!-- используем тег <a> в качестве div, чтобы ссылка работала одновременно на два элемента -->
+                        <a href="https://www.whatsapp.com/" target="_blank" class="button__referense">
+                            <img src="icons/icon-questions.svg" alt="Есть вопросы?">
+                            <p class="button__text">Есть<br>вопросы?</p>
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <div class="second_section__text">
-                <h2 class="second_section__text__title">
-                    Выпечка - <span class="red">это</span> вкусно!
+            
+        </div>
+
+        <!-- создаём внешний круг -->
+        <div class="main-section__outside-ellipse ellipse ellipse_big">
+            <div class="ellipse__subtract ellipse__subtract_big"></div>
+        </div>
+    </section>
+
+
+    <!-- вторая секция -->
+    <section class="second-section" id="about-me">
+
+        <!-- основной контент второй секции -->
+        <div class="container second-section__content-container">
+
+            <!-- заголовок. переиспользуем из первой секции -->
+            <h2 class="second-section__title title">Преподаю:
+                <img class="title__line" src="img/Line 1.svg" alt="линию" style="width: 414px;">
+            </h2>
+            
+            <!-- создаём блоки "гитары" второй секции -->
+            <div class="second-section__card-box">
+
+                <!-- первая карточка -->
+                <div class="second-section__cards-item card-item">
+                    <img class="card-item__img" src="img/electro-guitar.svg" alt="Электро-гитара">
+                    <p class="card-item__text">Электро <br> гитара</p>
+                </div>
+
+                <!-- вторая карточка -->
+                <div class="second-section__cards-item card-item card-item_orange">
+                    <img class="card-item__img" src="img/ukulele guitar.svg" alt="Электро-гитара">
+                    <p class="card-item__text">Укулеле</p>
+                </div>
+                
+                <!-- третья карточка -->
+                <div class="second-section__cards-item card-item card-item_blue">
+                    <img class="card-item__img card-item__img_acoustic" src="img/acoustic guitar.svg" alt="Электро-гитара" width="180px">
+                    <p class="card-item__text">Акустическая <br> гитара</p>
+                </div>
+            </div>
+
+            <!-- создаём блок с наградами -->
+            <div class="second-section__awards-box">
+                <!-- первая иконка -->
+                <div class="second-section__awards-item award-item">
+                    <img class="award-item__img" src="icons/вторая секция/award-icon-1.svg" alt="">
+                    <p class="award-item__text"><span class="spaner">7</span> <br>лет<br>преподавания</p>
+                </div>
+
+                <!-- вторая иконка -->
+                <div class="second-section__awards-item award-item">
+                    <img class="award-item__img" src="icons/вторая секция/award-icon-2.svg" alt="">
+                    <!-- оборачиваем число в <span>, чтобы увеличить размер -->
+                    <p class="award-item__text"> <span class="spaner">2000</span> <br>Часов<br>преподавания</p>
+                </div>
+
+                <!-- третья иконка -->
+                <div class="second-section__awards-item award-item">
+                    <img class="award-item__img" src="icons/вторая секция/award-icon-3.svg" alt="">
+                    <p class="award-item__text"><span class="spaner">314</span> <br>студентов</p>
+                </div>
+
+                <!-- четвёртая иконка -->
+                <div class="second-section__awards-item award-item">
+                    <img class="award-item__img" src="icons/вторая секция/award-icon-4.svg" alt="">
+                    <p class="award-item__text"><span class="spaner">276</span> <br>отзывов на 5<br>звёзд</p>
+                </div>
+            </div>
+
+            <!-- переиспользуем декоративные круги внутри контент-блока второй секции -->
+            <div class="second-section__first-ellipse ellipse ellipse_big">
+                <div class="ellipse__subtract ellipse__subtract_big"></div>
+            </div>
+
+            <div class="second-section__second-ellipse ellipse">
+                <div class="ellipse__subtract"></div>
+            </div>
+        </div>
+
+    </section>
+   
+
+    <!-- содаём тертью секцию -->
+    <section class="third-section" id="lessons">
+
+        <div class="container third-section__content-container">
+
+            <!--левая часть третьей секции -->
+            <div class="third-section__left-wrapper">
+
+                <!-- заголовок-->
+                <h2 class="third-section__title title">Обучение
+                    <img class="title__line" src="img/Line 1.svg" alt="линию" style="width: 378px;">
                 </h2>
-                <p class="second_section__text__text">
-                    Приготовление вкусной выпечки — далеко не всегда трудоемкий и сложный процесс. Тем не менее нужно знать некоторые тонкости готовки блюд такого рода, ведь каждый вид теста требует определённые к себе подходы. Зная, как приготовить выпечку правильно, вы всегда будете иметь в запасе большое количество коронных блюд, способных поразить любого гурмана.
-                </p>
+
             </div>
-        </section>
 
-        <section class="section_third" id="section_third">
-            <h3 class="section_third__title">Заказать</h3>
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A497346038e77ba080293d89eaf72ff84705788fc455444d97f6b3ed4b1ae627b&amp;source=constructor" width="800" height="400" frameborder="0"></iframe>
-        </section>
 
-    </main>
+            <!--правая часть третьей секции -->
+            <div class="third-section__right-wrapper">
+            
+                <!-- заголовок-->
+                <h2 class="third-section__title title">Готовлю<br> виртуозов
+                </h2>
+                <!-- текст -->
+                <p class="third-section__text text">В нашем мире много тревог, стрессов <br>и проблем… <br>Но есть в нем и очень классные вещи: занятия и хобби, которые помогают отвлечься от повседневной рутины, расслабиться и получить достаточно удовольствия.
+                <br><br>
+                Для полноценной жизни человеку необходимо не только есть, спать и ходить на работу. <br><br>Именно тяга и способность к творчеству отличает человека от всех остальных живых существ. </p>
+                
+                <!-- переисползуем кнопку и иконку с текстом-->
+                <div class="third-section__buttons button">
+                    <!-- кнопка -->
+                    <button class="button__book-a-lesson">
+                        <a class="button__white-reference" href="#">Забронировать <br> урок
+                        </a>
+                    </button>
+                    <!-- иконка с текстом "Есть вопросы?" -->
+                    <div class="third-section__icon-questions button__icon-questions">
+                        <a href="https://www.whatsapp.com/" target="_blank" class="button__referense">
+                            <img src="icons/icon-questions.svg" alt="Есть вопросы?">
+                            <p class="button__text">Есть<br>вопросы?</p>
+                        </a>
+                    </div>
+                </div>
 
-    <footer class="footer__">
-        <hr class="footer__line">
-        <nav>
-            <ul class="navigation__list">
-                <li><a href="#second_section">О НАС</a></li>
-                <li><a href="#">НОВОСТИ</a></li>
-                <li><a href="#">МЕНЮ</a></li>
-                <li><a href="#section_third">КОНТАКТЫ</a></li>
-            </ul>
-        </nav>
+            </div>
+
+            <!-- переиспользуем круги. первый круг -->
+            <div class="third-section__first-ellipse ellipse">
+                <div class="ellipse__subtract"></div>
+            </div>
+
+            <!-- добавляем второй круг с линиями -->
+            <img class="third-section__second-elipse" src="img/Subtract-with-lines.svg" alt="" >
+
+        </div>
+
+        <!-- переиспользуем третий круг. внешний -->
+        <div class="third-section__third-ellipse ellipse ellipse_big">
+            <div class="ellipse__subtract ellipse__subtract_big"></div>
+        </div>
+
+        <!-- переиспользуем четвёртый круг. внешний -->
+        <div class="third-section__fourth-ellipse ellipse">
+            <div class="ellipse__subtract"></div>
+        </div>
+
+    </section>
+
+
+    <!-- создаём футер сайта -->
+    <footer class="footer-section">
+
+        <!-- картинка грифа гитары -->
+        <img src="img/guitar-neck.svg" alt="гриф" class="footer-section__main-photo" style="width: 375px;">
+
+        <div class="container footer-section__content-container">
+
+            <!-- <img src="img/guitar-neck.svg" alt="гриф" class="footer-section__main-photo" style="width: 580px;"> -->
+
+            <!-- правая часть -->
+            <div class="footer-section__right-wrapper">
+
+                <!-- заголовок-->
+                <h2 class="third-section__title title" style="text-indent: 18px">Запишись на <br>пробный урок
+                </h2>
+
+                <!-- web иконки -->
+                <div class="footer-section__web-icons web-icons">
+                    <!-- создаём иконки с ссылками -->
+                    <div class="web-icons__item">
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="icons/instagramm 1.svg" alt="instagram">
+                        </a>
+                    </div>
+                    <div class="web-icons__item">
+                        <a href="https://vk.com" target="_blank">
+                            <img src="icons/vk 1.svg" alt="vkontakte">
+                        </a>
+                    </div>
+                    <div class="web-icons__item">
+                        <a href="https://www.skype.com/ru/" target="_blank">
+                            <img src="icons/skype.svg" alt="skype">
+                        </a>
+                    </div>
+                    <div class="web-icons__item">
+                        <a href="https://web.telegram.org/" target="_blank">
+                            <img src="icons/telegramm.svg" alt="telegramm">
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
     </footer>
 
 </body>
-</html> 
+
+</html>

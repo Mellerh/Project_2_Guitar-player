@@ -1,0 +1,542 @@
+
+// убираем отступы у всех элементов
+*
+    box-sizing: border-box
+
+
+// подключаем шрифты
+@font-face 
+    font-family: 'Montserrat-regular'
+    src: url('../fonts/Montserrat/Montserrat-Regular.ttf')
+    font-weight: regular
+    font-style: normal
+
+@font-face 
+    font-family: 'Montserrat-Semibold'
+    src: url('../fonts/Montserrat/Montserrat-SemiBold.ttf')
+    font-weight: 700
+    font-style: normal
+
+
+// создаём переменные с основными цветами
+$blue-color: #358AFF
+$orange-color: #FF7E4B
+$cream-color: #FFEBEB
+
+
+// применяем шрифт ко всему документу
+html
+    font-family: 'Montserrat-regular'
+
+
+// убираем фиолетовый цвет и подчёркивание у ссылок в nav-menu
+a
+    color: black
+    text-decoration: none
+    // слово меняет цвет при наведении
+    &:hover 
+        color: $blue-color
+
+
+.container
+    max-width: 1150px
+    // выравниваем содержимоей контейнера по середине  
+    margin: 0 auto
+
+
+.main-section 
+    min-height: 800px
+    background: #F6F6F6
+    position: relative
+
+    // обрезаем всё, что выходит за границы секции
+    overflow: hidden
+
+    // отодвигаем гланвый контейнре от верхней границы сайта
+    padding-top: 15px
+    
+    
+    // обращаемся в верхнему блоку с лого и nav
+    &__nav-container
+        display: flex
+        // делаем лого и nav-меню в строку
+        flex-direction: row
+
+        // центрируем по вертикали, то есть отодвигаем nav-menu и лого от верхней границы
+        align-items: center
+
+        // разделяем лого и nav-меню
+        justify-content: space-between
+        height: 82px
+        
+    // задаём размеры лого svg
+    &__logo
+        height: 80px
+        filter: drop-shadow(5px 18px 4px rgba(0, 0, 0, 0.25))
+
+    // позиционирование элементов nav-меню внутри блока
+    &__nav
+        display: flex
+        align-self: flex-center
+        // или
+        // padding-right: 50px
+        
+
+    // далем внутреннюю левую и првую секцию в строчку, чтобы отображать дивы в строчку 
+    &__content-container
+        display: flex
+        flex-direction: row
+        // добавляем relative для позиционирования внутренних секций
+        position: relative
+
+    // позиционируем внутренний правый эллипс
+    &__first-ellipse
+        position: absolute
+        right: -137px
+        top: 50px
+
+    // позиционируем внешний левый эллпис
+    &__left-ellipse
+        position: absolute
+        bottom: -74px
+        left: -754px
+
+    // позиционируем внешний эллипс
+    &__outside-ellipse
+        position: absolute
+        right: -120px
+        top: 650px
+
+.nav-menu
+    // делаем список nav строчным
+    &__list
+        display: flex
+        flex-direction: row
+
+    &__list-item
+        // создаём отступы между элементами
+        margin-right: 42px
+        font-size: 26px
+        font-family: 'Montserrat-Semibold'
+
+        // & дублирует название внешнего блока
+        &:last-child
+            margin-right: 0px
+
+    // псевдокласс. при наведении на кнопки нав-меню они будут менять цвет
+    
+        
+
+// стилизуем прямоугольники и устанавлием расположение элементов
+.left-wrapper
+
+    // задаём свойство для родительского элемента
+    position: relative
+    
+
+    // устанавливаем наибольший index для гитариста, чтобы он был сверху
+    &__img
+        position: relative
+        z-index: 3
+
+    &__rectangle-blue
+        // вырываем фигуру и размещаем на уровне с пианистом
+        position: absolute
+        top: 120px
+        left: -50px
+        width: 540.58px
+        height: 180.19px
+        
+        background: $blue-color
+
+        // закругляем углы
+        border-radius: 100px
+
+        // создаём тень
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+        // поворачиваем фигуру
+        transform: rotate(-67.1deg)
+    
+    &__rectangle-orange
+        position: absolute
+        width: 618.33px
+        height: 206.11px
+        top: 120px
+        left: -20px
+        z-index: 1
+        
+        background: $orange-color
+        border-radius: 100px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        transform: rotate(-43.22deg)
+        
+    &__rectangle-cream
+        position: absolute
+        width: 589.63px
+        height: 196.54px
+        top: 120px
+        left: 20px
+
+        background: $cream-color
+        border-radius: 100px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        transform: rotate(-26.37deg)
+
+
+.right-wrapper
+    max-width: 441px
+    height: 365px
+
+    // задаём положение правого контейнера внутри content-container
+    position: absolute
+    top: 50px
+    left: 760px
+    z-index: 5
+
+    // отодвигаем тайтл от web-иконок
+    &__web-icons
+        margin-bottom: 5px
+
+    // отодвигаем текст от тайтла
+    &__title
+        margin-bottom: 40px
+
+    // стилизуем текст
+    &__text
+        // отодвигаем кнопку(бронирование) и иконку вниз
+        margin-bottom: 42px
+
+    // немного двигаем кнопку и иконку
+    &__buttons
+        position: absolute
+        left: -74px
+        
+
+// стилизуем текст первой секции (под тайтлом)
+.text
+    font-size: 28px
+
+
+// стилизуем web-иконки
+.web-icons
+    display: flex
+    flex-direction: row
+    
+    .web-icons__item    
+        margin-right: 30px
+        &:last-child
+            margin-right: 0px    
+
+
+// стилизуем title и линию
+.title
+    font-size: 72px
+    font-family: 'Montserrat-Semibold'
+    position: relative
+
+    // стилизуем линию и задаём координаты
+    .title__line
+        // позиционриуем линию-картинку относительно тайтла
+        position: absolute
+        left: 6px
+        top: 66px
+
+        // вариат линии, написанный в css
+        // position: absolute
+        // bottom: 0px
+        // top: 40px
+        // задаём длинну линии
+        // width: 346px
+        // border: 1px solid #000000
+
+
+// изменяем вертикольное расположение кнопки "забронировать урок" и иконки с чатом
+.button
+    display: flex
+    flex-direction: row 
+
+    // стилизуем кнопку и отодвигаем от неё иконку
+    &__book-a-lesson
+        margin-right: 35px  
+
+        width: 205px
+        height: 82px
+        background: $orange-color
+        border-radius: 77px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+        // стилизуем текст в кнопке
+        font-size: 21px
+        font-family: 'Montserrat-Semibold'
+
+        // красим цвет текста
+        color: $cream-color
+
+        // убираем визуальную рамку
+        border: none
+
+    // текст "есть вопросы?"
+    &__text
+        font-size: 24px
+        font-family: 'Montserrat-Semibold'
+        
+    // воздействуем на тег <a>, послколько он выступает в качестве родительского div для <img> и <p>
+    &__referense
+        // изменяем иконку и текст на горизонтальное отображение  
+        display: flex
+        flex-direction: row
+        // выравниваем текст посередине с иконкой
+        align-items: center      
+
+        // отодвигаем текст от иконки по селектору тега (так как он внутри)
+        img
+            margin-right: 21px
+    
+    // поскольку мы оборачиваем слово "забронировать урок" общим тегом <a> и красим текст кнопки в чёрный, то добавляем отдельный класс, чтобы это исправить
+    &__white-reference
+        color: white
+
+
+// стилизуем эллипс
+.ellipse
+    width: 217px
+    height: 217px
+    background: linear-gradient(136.68deg, rgba(255, 126, 75, 0.5) 13.76%, rgba(53, 138, 255, 0.5) 49.71%, rgba(156, 156, 156, 0.5) 84.19%)
+
+    // создаём круг из квадрата
+    border-radius: 180px
+
+    // выравниваем внутренний круг посередине внешнего
+    display: flex
+    justify-content: center
+    align-items: center
+
+    // создаём внутренний круг
+    &__subtract
+        width: 131.25px
+        height: 131.25px
+        background: #F6F6F6
+        border-radius: 180px
+        
+        
+// стилизуем outside круг главной секции
+.ellipse_big
+    width: 274px
+    height: 274px
+// стилизуем внутренний круг внешнего круга главной секции
+.ellipse__subtract_big
+    width: 166px
+    height: 166px
+
+
+
+// создаём и стилизуем вторую секцию сайта
+.second-section
+    background: #FFFFFF
+    min-height: 707px
+
+    // отодвигаем вторую секцию от первой
+    padding-top: 30px
+
+    // посколько все части во второй секции мы оставляем в столбик, применять отображение блоков в строчку нам не нужно
+    &__content-container
+        position: relative
+
+    // отодвигаем секцию с карточками от тайтла
+    &__title
+        margin-bottom: 50px
+        
+
+    // отображаем карточки горизонтально внутри секции
+    &__card-box
+        display: flex
+        justify-content: space-between
+        // отодвигаем блок с наградами
+        margin-bottom: 25px
+        // (убираем круги на задний фон)
+        position: relative
+        z-index: 2
+
+    // позиционируем секцию с наградами внтури второй секции
+    &__awards-box
+        display: flex
+        // задаёт равномерное расстояние между элементами по горизонтали (марджини в таком случае не нужны)
+        justify-content: space-between
+
+    // позиционриуем круги во второй секции
+    &__first-ellipse
+        position: absolute
+        right: 170px
+        top: -20px
+    
+    &__second-ellipse
+        position: absolute
+        left: -100px
+        top: 230px
+        
+
+// стилизуем карточки второй секции
+.card-item
+    width: 355.63px
+    height: 360px
+
+    background: #4E5B6D
+    border-radius: 64px
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+    // задаём отображение по горизонатли и задаём отсупы между карточками (если задать justify-content: space-between родительскому элементу, то марджин можно не использовать)
+    // margin-right: 34px
+    // &:last-child
+    //     margin-right: 0px
+
+    position: relative
+    // overflow: hidden
+
+    // прибиваем картинки ко дну внутри карточки (вместо overflow)
+    display: flex
+    align-items: flex-end
+
+    // задаём параметры картинкам
+    &__img
+        height: 335px
+        
+    &__text
+        // задаём параметры рамке с текстом
+        width: 240.61px
+        height: 88px
+        position: absolute
+
+        font-family: 'Montserrat-Semibold'
+
+        // позиционируем текст внутри рамки
+        top: 129px
+        left: 107px
+        color: #FFFFFF
+        font-size: 37px
+
+        // выравниваем текст внутри собственного дива по центру
+        text-align: center
+        // поворачиваем рамку с текстом
+        transform: matrix(0.62, 0.78, -0.78, 0.62, 0, 0)
+
+
+// модификатор. отдельно поднастраиваем оранжвую карту
+.card-item_orange
+    background: $orange-color
+
+// модификатор. отдельно поднастраиваем синюю карту
+.card-item_blue
+    background: $blue-color
+
+// модификатор. немного двигаем картинку в третьей секции
+.card-item__img_acoustic
+    left: 25px
+
+
+// стилизуем иконки "награды"
+.award-item
+    // inline-flex выравнивает все элементы по горизонтали внутри контейнера
+    display: flex
+    flex-direction: row
+    // центрируем текст по вертикали
+    align-items: center
+        
+
+    // толакаем описание наград от иконки "награда"
+    &__img
+        margin-right: 20px
+        width: 80px
+        
+
+    &__text
+        font-size: 22px
+        align-items: stretch
+        // стилизуем цифры в тексте c наградами (обязательно оборачиваем цифру в тег span)
+        span
+            font-size: 38px
+            font-family: 'Montserrat-Semibold'
+            font-style: normal
+            font-weight: 700
+            
+
+// стилизуем третью секцию
+.third-section
+    min-height: 830px
+    background: #F6F6F6
+    position: relative
+    overflow: hidden
+
+    &__content-container
+        position: relative
+        display: flex
+        flex-direction: row
+        // раздвигаем левый и правый контейнер по горизонтали
+        justify-content: space-between
+
+    &__left-wrapper
+        display: flex
+        align-items: center
+        z-index: 1
+
+    &__right-wrapper
+        max-width: 630px
+        padding-top: 40px
+        
+    // отодвигаем тект от тайтла
+    &__title
+        margin-bottom: 39px
+
+    // отодвигаем иконки от текста
+    &__text
+        margin-bottom: 39px
+
+    // позиционриуем круги
+    &__first-ellipse
+        position: absolute
+        top: 303px
+        left: -114px
+    
+    &__second-elipse
+        position: absolute
+        left: 156px
+    
+    &__third-ellipse
+        position: absolute
+        top: -136px
+        right: -117px
+
+    &__fourth-ellipse
+        position: absolute
+        bottom: -121px
+        right: 156px
+
+
+// позиционируем футер сайта
+.footer-section
+    background: #FFFFFF
+    min-height: 300px
+    position: relative
+    
+    // позиционируем мейн-фото
+    &__main-photo
+        position: absolute
+        left: -6px
+        bottom: 96px
+
+    &__content-container
+        display: flex
+        flex-direction: row
+        justify-content: center
+        position: relative
+        padding-top: 33px
+
+    // позиционируем правую часть контент контейнера
+    &__right-wrapper
+        width: 673px
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    &__title
+        margin-bottom: 29px

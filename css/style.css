@@ -1,187 +1,401 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: 'Robota-Regular';
-    src:local('Robota');
-    src:url(../fonts/Roboto-Regular.ttf);
+  font-family: "Montserrat-regular";
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+  font-weight: regular;
+  font-style: normal;
 }
-
 @font-face {
-    font-family: 'Robota-Bold';
-    src:local('Robota');
-    src:url(../fonts/Roboto-Bold.ttf);
+  font-family: "Montserrat-Semibold";
+  src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+html {
+  font-family: "Montserrat-regular";
 }
 
-@font-face {
-    font-family: 'Philosopher-Regular';
-    src:local('Philosopher');
-    src:url(../fonts/Philosopher-Regular.ttf);
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: #358AFF;
 }
 
-body {
-    background-color: #ffe2b0;
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
-    padding-top: 10px;
+.main-section {
+  min-height: 800px;
+  background: #F6F6F6;
+  position: relative;
+  overflow: hidden;
+  padding-top: 15px;
+}
+.main-section__nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 82px;
+}
+.main-section__logo {
+  height: 80px;
+  filter: drop-shadow(5px 18px 4px rgba(0, 0, 0, 0.25));
+}
+.main-section__nav {
+  display: flex;
+  align-self: flex-center;
+}
+.main-section__content-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.main-section__first-ellipse {
+  position: absolute;
+  right: -137px;
+  top: 50px;
+}
+.main-section__left-ellipse {
+  position: absolute;
+  bottom: -74px;
+  left: -754px;
+}
+.main-section__outside-ellipse {
+  position: absolute;
+  right: -120px;
+  top: 650px;
 }
 
-nav {
-    margin-bottom: 20px;
-    text-align: center;
+.nav-menu__list {
+  display: flex;
+  flex-direction: row;
+}
+.nav-menu__list-item {
+  margin-right: 42px;
+  font-size: 26px;
+  font-family: "Montserrat-Semibold";
+}
+.nav-menu__list-item:last-child {
+  margin-right: 0px;
 }
 
-.navigation__list {
-    list-style-type: none;
-    padding: 0px;
-    font-family: 'Robota-Bold', sans-serif;
+.left-wrapper {
+  position: relative;
+}
+.left-wrapper__img {
+  position: relative;
+  z-index: 3;
+}
+.left-wrapper__rectangle-blue {
+  position: absolute;
+  top: 120px;
+  left: -50px;
+  width: 540.58px;
+  height: 180.19px;
+  background: #358AFF;
+  border-radius: 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(-67.1deg);
+}
+.left-wrapper__rectangle-orange {
+  position: absolute;
+  width: 618.33px;
+  height: 206.11px;
+  top: 120px;
+  left: -20px;
+  z-index: 1;
+  background: #FF7E4B;
+  border-radius: 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(-43.22deg);
+}
+.left-wrapper__rectangle-cream {
+  position: absolute;
+  width: 589.63px;
+  height: 196.54px;
+  top: 120px;
+  left: 20px;
+  background: #FFEBEB;
+  border-radius: 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(-26.37deg);
 }
 
-.navigation__list li {
-    display: inline;
-    margin-right: 100px;
+.right-wrapper {
+  max-width: 441px;
+  height: 365px;
+  position: absolute;
+  top: 50px;
+  left: 760px;
+  z-index: 5;
+}
+.right-wrapper__web-icons {
+  margin-bottom: 5px;
+}
+.right-wrapper__title {
+  margin-bottom: 40px;
+}
+.right-wrapper__text {
+  margin-bottom: 42px;
+}
+.right-wrapper__buttons {
+  position: absolute;
+  left: -74px;
 }
 
-/* убираем отступ у последнего элемента списка через псевдокласс */
-li:last-child {
-    margin-right: 0px;
+.text {
+  font-size: 28px;
 }
 
-.navigation__list a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
+.web-icons {
+  display: flex;
+  flex-direction: row;
+}
+.web-icons .web-icons__item {
+  margin-right: 30px;
+}
+.web-icons .web-icons__item:last-child {
+  margin-right: 0px;
 }
 
-.navigation__list a:hover {
-    color: rgb(227, 252, 255);
-    font-size: 20px;
+.title {
+  font-size: 72px;
+  font-family: "Montserrat-Semibold";
+  position: relative;
+}
+.title .title__line {
+  position: absolute;
+  left: 6px;
+  top: 66px;
 }
 
-.section_main_photo {
-    height: 640px;
-    background: url(../img/01-background-img.jpg) center/cover;
-
-    margin-bottom: 20px;
+.button {
+  display: flex;
+  flex-direction: row;
+}
+.button__book-a-lesson {
+  margin-right: 35px;
+  width: 205px;
+  height: 82px;
+  background: #FF7E4B;
+  border-radius: 77px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 21px;
+  font-family: "Montserrat-Semibold";
+  color: #FFEBEB;
+  border: none;
+}
+.button__text {
+  font-size: 24px;
+  font-family: "Montserrat-Semibold";
+}
+.button__referense {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.button__referense img {
+  margin-right: 21px;
+}
+.button__white-reference {
+  color: white;
 }
 
-.section_main_photo__block {
-    width: 420px;
-    height: 190px;
-    background: linear-gradient(180deg, rgba(244, 213,178, 0.8) 0%, rgba(234, 156, 65, 0.8) 100%);
-    
-    position: relative;
-    top: 54%;
-    left: 51%;
-
-    text-align: center;
-
-    /* толкает рамку от верхней границы блока */
-    padding-top: 15px;
+.ellipse {
+  width: 217px;
+  height: 217px;
+  background: linear-gradient(136.68deg, rgba(255, 126, 75, 0.5) 13.76%, rgba(53, 138, 255, 0.5) 49.71%, rgba(156, 156, 156, 0.5) 84.19%);
+  border-radius: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ellipse__subtract {
+  width: 131.25px;
+  height: 131.25px;
+  background: #F6F6F6;
+  border-radius: 180px;
 }
 
-.section_main_photo__border {
-    height: 160px;
-    width: 390px;
-    border: 1px #000000 solid;
-    margin: 0 auto;
-    
-    /* толкаем текст от границ рамки */
-    padding-top: 17px;
-    padding-left: 28px;
-
-    text-align: left;
+.ellipse_big {
+  width: 274px;
+  height: 274px;
 }
 
-.section_main__title {
-    font-size: 34px;
-    margin: 0;
-    margin-bottom: 9px;
-
-    font-family: 'Philosopher-Regular', sans-serif;
+.ellipse__subtract_big {
+  width: 166px;
+  height: 166px;
 }
 
-.section_main__text {
-    font-size: 16px;
-    margin: 0;
-
-    font-family: 'Robota-Regular', sans-serif;
+.second-section {
+  background: #FFFFFF;
+  min-height: 707px;
+  padding-top: 30px;
+}
+.second-section__content-container {
+  position: relative;
+}
+.second-section__title {
+  margin-bottom: 50px;
+}
+.second-section__card-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+.second-section__awards-box {
+  display: flex;
+  justify-content: space-between;
+}
+.second-section__first-ellipse {
+  position: absolute;
+  right: 170px;
+  top: -20px;
+}
+.second-section__second-ellipse {
+  position: absolute;
+  left: -100px;
+  top: 230px;
 }
 
-.second_section {
-    margin-bottom: 30px;
+.card-item {
+  width: 355.63px;
+  height: 360px;
+  background: #4E5B6D;
+  border-radius: 64px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+.card-item__img {
+  height: 335px;
+}
+.card-item__text {
+  width: 240.61px;
+  height: 88px;
+  position: absolute;
+  font-family: "Montserrat-Semibold";
+  top: 129px;
+  left: 107px;
+  color: #FFFFFF;
+  font-size: 37px;
+  text-align: center;
+  transform: matrix(0.62, 0.78, -0.78, 0.62, 0, 0);
 }
 
-.second_section__icons {
-    text-align: center;
-    margin-bottom: 20px;
-
+.card-item_orange {
+  background: #FF7E4B;
 }
 
-.second_section__icons img {
-    margin-right: 76px;
+.card-item_blue {
+  background: #358AFF;
 }
 
-.second_section__icons img:last-child {
-    margin-right: 0px;
+.card-item__img_acoustic {
+  left: 25px;
 }
 
-.second_section__text__title {
-    font-size: 96px;
-    margin: 0;
-    text-align: center;
-    margin-bottom: 15px;
-
-    font-family: 'Philosopher-Regular', sans-serif;
+.award-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.award-item__img {
+  margin-right: 20px;
+  width: 80px;
+}
+.award-item__text {
+  font-size: 22px;
+  align-items: stretch;
+}
+.award-item__text span {
+  font-size: 38px;
+  font-family: "Montserrat-Semibold";
+  font-style: normal;
+  font-weight: 700;
 }
 
-.red {
-    color: #f15b40;
+.third-section {
+  min-height: 830px;
+  background: #F6F6F6;
+  position: relative;
+  overflow: hidden;
+}
+.third-section__content-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.third-section__left-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.third-section__right-wrapper {
+  max-width: 630px;
+  padding-top: 40px;
+}
+.third-section__title {
+  margin-bottom: 39px;
+}
+.third-section__text {
+  margin-bottom: 39px;
+}
+.third-section__first-ellipse {
+  position: absolute;
+  top: 303px;
+  left: -114px;
+}
+.third-section__second-elipse {
+  position: absolute;
+  left: 156px;
+}
+.third-section__third-ellipse {
+  position: absolute;
+  top: -136px;
+  right: -117px;
+}
+.third-section__fourth-ellipse {
+  position: absolute;
+  bottom: -121px;
+  right: 156px;
 }
 
-.second_section__text__text {
-    font-size: 18px;
-    text-align: center;
-    margin: 0 auto;
-
-    width: 1000px;
-    font-family: 'Robota-Regular', sans-serif;
+.footer-section {
+  background: #FFFFFF;
+  min-height: 300px;
+  position: relative;
 }
-
-.section_third {
-    margin-bottom: 20px;
+.footer-section__main-photo {
+  position: absolute;
+  left: -6px;
+  bottom: 96px;
 }
-
-.section_third__title {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 20px;
-
-    font-family: 'Philosopher-Regular', sans-serif;
+.footer-section__content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  padding-top: 33px;
 }
-
-iframe {
-    display: block;
-    margin: 0 auto;
+.footer-section__right-wrapper {
+  width: 673px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.footer__ {
-    height: 70px;
-}
-
-.footer__line {
-    border: none;
-    width: 900px;
-    border-top: 1px solid #999999;
-    margin: 0 auto;
-
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-family: 'Robota!';
-}
+.footer-section__title {
+  margin-bottom: 29px;
+}/*# sourceMappingURL=style.css.map */
