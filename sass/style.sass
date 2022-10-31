@@ -27,21 +27,16 @@ $cream-color: #FFEBEB
 // применяем шрифт ко всему документу
 html
     font-family: 'Montserrat-regular'
+    // задаёт плавную анимацию прокрутки
+    scroll-behavior: smooth
 
-
-// убираем фиолетовый цвет и подчёркивание у ссылок в nav-menu
-a
-    color: black
-    text-decoration: none
-    // слово меняет цвет при наведении
-    &:hover 
-        color: $blue-color
-
-
+    
+// бэм класс, который мы переиспользуем в каждоый секции в контент-контейнерах
 .container
     max-width: 1150px
     // выравниваем содержимоей контейнера по середине  
     margin: 0 auto
+    position: relative
 
 
 .main-section 
@@ -54,7 +49,7 @@ a
 
     // отодвигаем гланвый контейнре от верхней границы сайта
     padding-top: 15px
-    
+    z-index: 3
     
     // обращаемся в верхнему блоку с лого и nav
     &__nav-container
@@ -62,7 +57,7 @@ a
         // делаем лого и nav-меню в строку
         flex-direction: row
 
-        // центрируем по вертикали, то есть отодвигаем nav-menu и лого от верхней границы
+        // центрируем по вертикали, то есть отодвигаем nav-menu и лого от верхней границы внутри дива
         align-items: center
 
         // разделяем лого и nav-меню
@@ -74,26 +69,19 @@ a
         height: 80px
         filter: drop-shadow(5px 18px 4px rgba(0, 0, 0, 0.25))
 
-    // позиционирование элементов nav-меню внутри блока
-    &__nav
-        display: flex
-        align-self: flex-center
-        // или
-        // padding-right: 50px
         
-
     // далем внутреннюю левую и првую секцию в строчку, чтобы отображать дивы в строчку 
     &__content-container
-        display: flex
-        flex-direction: row
         // добавляем relative для позиционирования внутренних секций
         position: relative
+        display: flex
+        flex-direction: row
 
     // позиционируем внутренний правый эллипс
     &__first-ellipse
         position: absolute
-        right: -137px
-        top: 50px
+        left: 303px
+        top: 0px
 
     // позиционируем внешний левый эллпис
     &__left-ellipse
@@ -108,6 +96,7 @@ a
         top: 650px
 
 .nav-menu
+    
     // делаем список nav строчным
     &__list
         display: flex
@@ -118,12 +107,20 @@ a
         margin-right: 42px
         font-size: 26px
         font-family: 'Montserrat-Semibold'
-
         // & дублирует название внешнего блока
         &:last-child
             margin-right: 0px
 
-    // псевдокласс. при наведении на кнопки нав-меню они будут менять цвет
+// убираем фиолетовый цвет и подчёркивание у всех элементов, обёрнутых в ссылку "a"
+a
+    color: black
+    text-decoration: none
+
+    // задаёт плавную анимацию окрашивания
+    transition: 1s all
+    // слово меняет цвет при наведении
+    &:hover 
+        color: $blue-color
     
         
 
@@ -133,11 +130,14 @@ a
     // задаём свойство для родительского элемента
     position: relative
     
-
     // устанавливаем наибольший index для гитариста, чтобы он был сверху
     &__img
         position: relative
-        z-index: 3
+        // height: 700px
+        z-index: 5
+    
+    &__img-guitar-figures
+        display: none
 
     &__rectangle-blue
         // вырываем фигуру и размещаем на уровне с пианистом
@@ -146,25 +146,22 @@ a
         left: -50px
         width: 540.58px
         height: 180.19px
-        
+        // задаём цвет
         background: $blue-color
-
         // закругляем углы
         border-radius: 100px
-
         // создаём тень
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-
         // поворачиваем фигуру
         transform: rotate(-67.1deg)
-    
+        z-index: 3
     &__rectangle-orange
         position: absolute
         width: 618.33px
         height: 206.11px
         top: 120px
         left: -20px
-        z-index: 1
+        z-index: 2
         
         background: $orange-color
         border-radius: 100px
@@ -182,16 +179,15 @@ a
         border-radius: 100px
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
         transform: rotate(-26.37deg)
-
+        z-index: 1
 
 .right-wrapper
-    max-width: 441px
-    height: 365px
+    width: 400px
 
     // задаём положение правого контейнера внутри content-container
     position: absolute
     top: 50px
-    left: 760px
+    right: 16px
     z-index: 5
 
     // отодвигаем тайтл от web-иконок
@@ -209,8 +205,8 @@ a
 
     // немного двигаем кнопку и иконку
     &__buttons
-        position: absolute
-        left: -74px
+        position: relative
+        right: 30px
         
 
 // стилизуем текст первой секции (под тайтлом)
@@ -223,7 +219,7 @@ a
     display: flex
     flex-direction: row
     
-    .web-icons__item    
+    &__item    
         margin-right: 30px
         &:last-child
             margin-right: 0px    
@@ -234,9 +230,10 @@ a
     font-size: 72px
     font-family: 'Montserrat-Semibold'
     position: relative
+    z-index: 2
 
     // стилизуем линию и задаём координаты
-    .title__line
+    &__line
         // позиционриуем линию-картинку относительно тайтла
         position: absolute
         left: 6px
@@ -249,12 +246,18 @@ a
         // задаём длинну линии
         // width: 346px
         // border: 1px solid #000000
+    &__line_main
+        width: 345px
+    &__line_third
+        width: 377px
+
 
 
 // изменяем вертикольное расположение кнопки "забронировать урок" и иконки с чатом
 .button
     display: flex
     flex-direction: row 
+    width: 452px
 
     // стилизуем кнопку и отодвигаем от неё иконку
     &__book-a-lesson
@@ -335,13 +338,13 @@ a
 .second-section
     background: #FFFFFF
     min-height: 707px
-
-    // отодвигаем вторую секцию от первой
-    padding-top: 30px
+    overflow: hidden
 
     // посколько все части во второй секции мы оставляем в столбик, применять отображение блоков в строчку нам не нужно
     &__content-container
         position: relative
+        // отодвигаем вторую секцию от первой
+        padding-top: 30px
 
     // отодвигаем секцию с карточками от тайтла
     &__title
@@ -351,10 +354,10 @@ a
     // отображаем карточки горизонтально внутри секции
     &__card-box
         display: flex
-        justify-content: space-between
+        justify-content: center
         // отодвигаем блок с наградами
         margin-bottom: 25px
-        // (убираем круги на задний фон)
+        // убираем круги на задний фон
         position: relative
         z-index: 2
 
@@ -362,13 +365,13 @@ a
     &__awards-box
         display: flex
         // задаёт равномерное расстояние между элементами по горизонтали (марджини в таком случае не нужны)
-        justify-content: space-between
+        justify-content: space-evenly
 
     // позиционриуем круги во второй секции
     &__first-ellipse
         position: absolute
         right: 170px
-        top: -20px
+        top: -82px
     
     &__second-ellipse
         position: absolute
@@ -378,6 +381,7 @@ a
 
 // стилизуем карточки второй секции
 .card-item
+    position: relative
     width: 355.63px
     height: 360px
 
@@ -386,12 +390,9 @@ a
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
 
     // задаём отображение по горизонатли и задаём отсупы между карточками (если задать justify-content: space-between родительскому элементу, то марджин можно не использовать)
-    // margin-right: 34px
-    // &:last-child
-    //     margin-right: 0px
-
-    position: relative
-    // overflow: hidden
+    margin-right: 39px
+    &:last-child
+        margin-right: 0px
 
     // прибиваем картинки ко дну внутри карточки (вместо overflow)
     display: flex
@@ -400,6 +401,10 @@ a
     // задаём параметры картинкам
     &__img
         height: 335px
+    // модификатор. немного двигаем картинку гитары в третьей секции
+    &__img_acoustic
+        position: relative
+        left: -5px
         
     &__text
         // задаём параметры рамке с текстом
@@ -428,10 +433,6 @@ a
 // модификатор. отдельно поднастраиваем синюю карту
 .card-item_blue
     background: $blue-color
-
-// модификатор. немного двигаем картинку в третьей секции
-.card-item__img_acoustic
-    left: 25px
 
 
 // стилизуем иконки "награды"
@@ -480,6 +481,7 @@ a
         z-index: 1
 
     &__right-wrapper
+        // задаём максмальную ширину, потому что раздвинули left и right контейнеры с помощью space-between
         max-width: 630px
         padding-top: 40px
         
@@ -515,28 +517,755 @@ a
 // позиционируем футер сайта
 .footer-section
     background: #FFFFFF
-    min-height: 300px
     position: relative
     
     // позиционируем мейн-фото
     &__main-photo
         position: absolute
         left: -6px
-        bottom: 96px
+        bottom: 154px
 
     &__content-container
         display: flex
-        flex-direction: row
         justify-content: center
-        position: relative
         padding-top: 33px
-
-    // позиционируем правую часть контент контейнера
-    &__right-wrapper
-        width: 673px
-        display: flex
-        flex-direction: column
-        align-items: center
+    
+    &__web-icons
+        padding-left: 0px
+        justify-content: center
 
     &__title
         margin-bottom: 29px
+
+
+
+// задаём размеры для адаптива под небольшие экраны ноутбуков
+@media (max-width: 1199px)
+    .container 
+        width: 960px
+    // при достижении отметки окна браузера в 1199, наши элементы примут текущие значения
+    // первая секция
+    .main-section 
+        min-height: 706px
+        &__outside-ellipse 
+            position: absolute
+            right: -120px
+            top: 549px
+    .ellipse_big 
+        width: 254px
+        height: 254px
+    .left-wrapper
+        &__img
+            width: 730px
+            top: 20px
+        &__rectangle-blue
+            left: -62px
+            width: 505px
+            height: 174.19px
+        &__rectangle-orange
+            width: 540.33px
+            height: 160.11px
+            top: 131px
+            left: -30px
+        &__rectangle-cream
+            width: 541.63px
+            height: 176.54px
+            top: 120px
+            left: -28px
+    .right-wrapper
+        width: 400px
+        top: 39px
+        right: 7px
+        &__title 
+            margin-bottom: 27px
+        &__text 
+            margin-bottom: 23px
+    .title__line_main
+        width: 325px !important
+
+    // вторая секция
+    .second-section
+        min-height: 625px
+    .title 
+        font-size: 68px
+    // !important даёт приоритетность к style в html
+    .title__line_second
+        width: 391px !important
+    // карточки
+    .card-item 
+        position: relative
+        width: 407.63px
+        height: 316px
+        &__text
+            top: 115px
+            left: 72px
+            font-size: 32px
+        &__img 
+            height: 280px
+        &__img_acoustic 
+            left: -18px
+            bottom: 1px
+    // награды
+    .award-item__text 
+        font-size: 20px
+    .award-item__img 
+        margin-right: 14px
+        width: 75px
+        
+    // третья секция
+    .third-section 
+        min-height: 897px
+        &__left-wrapper
+            margin-right: 62px
+        &__second-elipse 
+            left: 91px
+    .third-section__right-wrapper 
+        max-width: 540px
+    .third-section__title 
+        margin-bottom: 30px
+    .title__line_third
+        width: 354px !important
+
+    // четвёртая секция
+    .footer-section__main-photo 
+        bottom: 184px
+        width: 337px !important
+
+
+
+// размеры для вертикального планшета (задаём 768px в консоле разработчика)
+@media (max-width: 991px)
+    .container 
+        width: 720px
+
+    // первая секция
+    .main-section 
+        min-height: 575px
+        &__outside-ellipse 
+            right: -126px
+            top: 483px
+        &__logo 
+            height: 65px
+        &__first-ellipse 
+            left: 239px
+            top: -16px
+            width: 195px
+            height: 195px
+    .nav-menu__list 
+        padding-bottom: 12px
+    .nav-menu__list-item
+        margin-right: 37px
+        font-size: 20px
+    .left-wrapper
+        &__img
+            width: 568px
+            top: 19px
+            right: 24px
+        &__rectangle-blue
+            left: -52px
+            top: 83px
+            width: 362px
+            height: 139.19px
+        &__rectangle-orange
+            width: 403px
+            height: 139.11px
+            top: 95px
+            left: -36px
+        &__rectangle-cream
+            width: 397.63px
+            height: 124px
+            top: 117px
+            left: -6px
+    .right-wrapper 
+        width: 304px
+        top: 10px
+        right: 15px
+    .web-icons__item    
+        margin-right: 20px
+    .web-icons__logo
+        width: 50px
+        height: 50px
+    .title 
+        font-size: 58px
+        &__line
+            top: 53px
+        &__line_main
+            width: 278px !important
+    .text 
+        font-size: 21px
+    // блок с кнопкой брони и "есть вопросы?"
+    .button
+        &__book-a-lesson 
+            margin-right: 18px
+            width: 162px
+            height: 62px
+            font-size: 17px
+        // воздействуем на единственную фото в блоке. удобно и не нужно писать доп. класс
+        img 
+            width: 63px
+            margin-right: 14px
+        &__text 
+            font-size: 20px
+
+
+    // вторая секция
+    .second-section
+        min-height: 501px
+        &__content-container 
+            padding-top: 18px
+    .second-section__first-ellipse 
+        right: 115px
+        top: -149px
+        &__card-box 
+            margin-bottom: 19px
+    .title__line_second
+        width: 333px !important
+    .card-item 
+        margin-right: 14px
+        height: 258px
+        overflow: hidden
+        &__img 
+            height: 222px
+        &__img_acoustic 
+            left: -30px
+            bottom: 1px
+        &__text 
+            top: 100px
+            left: 21px
+            font-size: 25px
+    .award-item__img 
+        margin-right: 5px
+        width: 54px
+    .award-item__text 
+        font-size: 15px
+        span
+            font-size: 30px
+
+
+    // третья секция
+    .third-section 
+        min-height: 670px
+        &__left-wrapper 
+            margin-right: 0px
+        &__right-wrapper 
+            max-width: 375px
+            padding-top: 22px
+        &__text 
+            margin-bottom: 30px
+        &__second-elipse 
+            width: 151px !important
+        &__third-ellipse 
+            top: -146px
+            right: -149px
+        &__fourth-ellipse 
+            bottom: -140px
+            right: -21px
+    // линия под тайтлом
+    .title__line_third
+        width: 302px !important
+
+
+    // четвёртая секция
+    .footer-section__main-photo 
+        bottom: 171px
+        width: 232px !important
+    .footer-section__title 
+        margin-bottom: 19px
+
+
+
+
+// размеры для вертикального телефона    
+@media (max-width: 767px)
+    .container 
+        width: 540px
+    
+
+    // nav-menu для гамбургера. эти правила работают после нажатия на гамбурегр
+    .nav-menu
+        // fixed - чтобы при прокрутке страницы, нав-меню тоже прокручивалось
+        position: fixed
+    
+        // -100% - то есть нав-меню будет скрываться за видимой частью окна
+        right: -100%
+        top: 0
+        z-index: 25
+
+        // 100vh - то есть высота нав-меню всегда 100% браузера
+        height: 100vh
+        width: 50%
+        background: linear-gradient(136.68deg, rgba(255, 126, 75, 0.8) 13.76%, rgba(53, 138, 255, 0.8) 49.71%, rgba(156, 156, 156, 0.8) 84.19%)
+
+        // окно будет плавно выезжать
+        transition: 1s all
+
+        // теперь задаём отображение самих слов в нав-контейнере
+        &__list
+            // обязательно задаём высоту. 100%-по отношению к контейнеру
+            height: 100%
+            flex-direction: column
+            justify-content: space-evenly
+            align-items: center
+
+        // убираем отступы, иначе элементы отображаются левее
+        &__list-item
+            margin-right: 0px
+            font-size: 26px
+
+    // создаём гамбургер
+    .hamburger
+        // высота задаётся для корректного нажатия на div пользователем (высчитывается сложением margin и высоты у span)
+        height: 16px
+        width: 30px
+
+        position: fixed
+        top: 40px
+        right: 18px
+        z-index: 30
+        span
+            width: 100%
+            height: 2px
+
+            // задаём block, так как span строчные элементы
+            display: block
+            background: black
+
+            // отделяем спаны друг от друга
+            margin-bottom: 5px
+            &:last-child
+                margin-bottom: 0px
+
+            // создаём плавную анимацию перехода из гамбургера в крестик и наоборот
+            transition: 0.8s all
+
+    // меняем гамбургер на крестик с помощью модификатора
+    .hamburger_active
+        span
+            // задаём отступы, чтобы линии корректно превратились в крестик
+            margin-bottom: -2px
+
+            // воздействуем на первый элемент 
+            &:nth-child(1)
+                // разворачиваем, создавая линию крестика
+                transform: translateY(3px) rotate(-45deg)
+            &:nth-child(2)
+                display: none
+
+            // translateY сдвигает элементы по оси Y. Теперь при нажатии на гамбурегр, крестик появится в том же месте
+            &:nth-child(3)
+                transform: translateY(3px) rotate(45deg)
+
+    // активируем "новое" нав-меню
+    .nav-menu_active
+        // было right: -100%, но после нажатия на гамбургер появится отображение
+        right: 0px
+        z-index: 29
+
+
+    // адаптируем первую секцию
+    .main-section
+        min-height: 475px
+
+        // задаём nav-конейтенру 100% ширину, чтобы лого гитары двигалось вместе с шириной браузера
+        &__nav-container
+            position: relative
+            width: 100%        
+        &__first-ellipse 
+            left: 202px
+            top: 48px
+        &__outside-ellipse 
+            display: none
+        &__logo 
+            height: 55px
+            position: absolute
+            left: 24px
+            top: 10px
+
+    .left-wrapper
+        &__img
+            width: 423px
+            top: 35px
+            right: 53px
+        &__rectangle-blue
+            left: -74px
+            top: 93px
+            width: 273px
+            height: 98.19px
+        &__rectangle-orange
+            width: 301px
+            height: 97px
+            top: 92px
+            left: -73px
+        &__rectangle-cream
+            width: 295.63px
+            height: 93px
+            top: 93px
+            left: -44px
+
+    .right-wrapper 
+        width: 237px
+        top: -5px
+        right: -5px
+        &__buttons 
+            right: 33px
+        &__title 
+            margin-bottom: 20px
+        &__text 
+            margin-bottom: 28px
+
+    // картинки соц.сетей
+    .web-icons__logo 
+        width: 45px
+        height: 45px
+
+    // все тайтлы на стринице
+    .title 
+        font-size: 48px
+        &__line 
+            top: 43px
+        &__line_main
+            width: 229px !important    
+
+    // весь текст на стринице
+    .text 
+        font-size: 19px
+
+    .button 
+        flex-direction: column
+        align-items: center
+        width: 346px
+        // кнопка
+        &__book-a-lesson 
+            margin-right: 0px
+            margin-bottom: 12px
+            font-size: 14px
+            width: 134px
+            height: 61px
+        // стилизуем "есть вопросы?"
+        img 
+            width: 51px
+        &__text 
+            font-size: 19px
+
+    // все круги на стринице
+    .ellipse 
+        width: 150px
+        height: 150px
+        &__subtract 
+            width: 100px
+            height: 100px
+
+
+    // стилизуем вторую секцию
+    .second-section
+        min-height: 828px
+
+        &__first-ellipse 
+            right: 18px
+            top: -87px
+        &__title 
+            margin-bottom: 28px
+
+        // меняем отображение карточек с горизонтального на вертикальное
+        &__card-box 
+            flex-direction: column
+            align-items: center
+
+        // утанавливаем отображение наград в 2 колонны
+        &__awards-box 
+            justify-content: space-between
+            flex-wrap: wrap
+            width: 405px
+            position: relative
+            left: 76px
+            
+
+    .title__line_second 
+        width: 274px !important
+
+    // стилизуем карточки второй секции под новые размеры экрана
+    .card-item 
+        height: 173px
+        margin-right: 0px
+        margin-bottom: 12px
+        &:last-child
+            margin-bottom: 0px
+        // позиционируем текст в карточках
+        &__text 
+            top: 55px
+            left: 145px
+            font-size: 32px
+            transform: none
+            // text-align: right
+        &__img 
+            position: absolute
+            left: 7px
+            top: 16px
+            height: 249px
+            &_acoustic
+                position: absolute
+                left: -4px
+
+        // позиционриуем текст в оранжевой карточке через селектор p
+        &_orange
+            p
+                top: 73px
+                left: 139px
+
+    // стилизуем награды
+    .award-item__img 
+        margin-right: 11px
+
+    // выравниваем элементы-награды между собой
+    .award-item_7-years
+        margin-bottom: 10px
+    .award-item_2000-hours
+        padding-right: 14px
+        margin-bottom: 20px
+
+
+    // стилизую третью секцию
+    .third-section
+        min-height: 519px
+
+        &__fourth-ellipse 
+            bottom: -78px
+            right: -21px
+        &__second-elipse 
+            width: 131px !important
+            left: 308px
+
+        // выравниваем контент посередине в третьей секции
+        &__content-container
+            justify-content: center
+
+        // убираем отображение левой части (для визуального удобаства)
+        &__left-wrapper
+            display: none
+        // убираем отображение первого тайтла третьей секции
+            h2
+                display: none
+
+        &__right-wrapper 
+            max-width: 478px
+
+        // позиционируем две кнопки в третьей секции
+        &__buttons
+            position: relative
+            left: 84px
+            // возвращаем горизонатльное отображение кнопок для третьей секции и выравниваем
+            flex-direction: row
+
+    // стилизуем кнопку брониварония
+    .button__book-a-lesson
+        margin-right: 30px
+        width: 134px
+        height: 61px
+
+
+    // стилизуем футер сайта
+
+    .footer-section__content-container 
+        padding-top: 18px
+
+    .footer-section__main-photo 
+        bottom: 122px
+        width: 150px !important
+
+    // немного выравнием первое слово над вторым по горизонтали 
+    .footer-section__title
+        text-indent: 14px !important
+
+
+
+
+
+// размеры для горизонтального телефона (в консоле забиваем 320px. минимальный размер экрана)
+@media (max-width: 575px)
+    
+
+    .container 
+        width: 100%
+
+    // стилизуем первую секцию
+    .main-section
+        justify-content: space-between
+        min-height: 454px
+
+        // без понятия, но данный отступ позволяет хорошо отображать первую секцию на устройствах. По высоте
+        padding: 1rem 0
+        
+
+        &__first-ellipse
+            display: none
+        &__outside-ellipse
+            display: flex
+            position: absolute
+            top: 98px
+            right: -103px
+    
+    // стилизуем левую часть первой секции
+    .left-wrapper
+        // height: 300px
+        
+        // скачал из фигма картинку гитариста с фигурами. так проще подгонять размеры для адаптива            
+        &__img-guitar-figures
+            display: flex
+            position: relative
+            width: 70%
+            
+            top: 66px
+            right: 17px
+            z-index: 5
+        
+        // убираем отображения всех фигур
+        &__img
+            display: none
+        &__rectangle-blue
+            display: none
+        &__rectangle-orange
+            display: none
+        &__rectangle-cream
+            display: none
+
+    .right-wrapper 
+        // задаём отображение правой секции в 50% экрана. текст будет переноситься автоматически на новую строку
+        right: 0px
+        width: 50%
+        // чуть двигаем правую секцию от левой
+        padding-left: 10px
+
+        display: flex
+        flex-direction: column
+
+        // располагаем кнопки по центру правой секции. Они так визуальнее лучше адаптируются
+        &__buttons
+            align-self: center
+            right: 0px
+            z-index: 11
+            
+        // ТОП РЕШЕНИЕ. автоматически переносим иконки на новую строку, как ширина контейнреа уменьшается
+        &__web-icons
+            flex-wrap: wrap
+
+    // уменьшаем веб-айконы 
+    .web-icons__logo 
+        width: 35px
+        height: 35px
+
+
+    // уменьшаем все тайтлы на странице
+    .title 
+        font-size: 32px
+        &__line 
+            top: 33px
+        &__line_main 
+            // width: 171px !important
+            display: none
+
+    // уменьшаем весь текст на странице
+    .text 
+        font-size: 15px
+
+    // стилизую блок с кнопками
+    .button 
+        width: 117px
+        &__book-a-lesson 
+            margin-right: 0px
+            width: 123px
+            height: 52px
+            font-size: 12px
+        img 
+            width: 39px
+        &__text 
+            font-size: 14px
+
+
+
+    // стилизуем вторую секцию
+    
+    .second-section__awards-box
+        width: 100%
+        justify-content: space-around 
+
+        // иконки автоматически выстраиваются в ряд и переносятся на новую строку при сужении браузера   
+        flex-flow: row wrap
+        
+        left: 0px
+    
+    .title__line_second 
+        width: 181px !important
+
+    .card-item 
+        width: 80%
+
+        &__text 
+            // vh позволяет изменять размер текста в зависимости от размера экрана
+            font-size: 6.6vw
+
+            // див с текстом заполняет 100% пространства
+            width: 100%
+            height: 100%
+            display: flex
+
+            // выравниваем текст во внутреннем диве посередине
+            align-items: center
+
+            // отображаем див с текстом по правому краю главного дива(карточки)
+            justify-content: flex-end
+
+            // задаём отступы для внутреннего дива (чтобы отодвинуть див от правого края)
+            padding-right: 1.5rem 
+
+            top: 0px
+            left: 0px
+
+        &_orange p 
+            left: 0px
+            top: 0px
+
+        &__img
+            width: 50%
+            right: 20px
+        &__img_acoustic 
+            top: 37px
+            left: -19px
+            height: 217px
+    
+
+
+    // стилизуем третью секцию
+
+    .third-section 
+        min-height: 453px
+
+        &__right-wrapper
+            width: 90%
+
+        &__second-elipse 
+            width: 30% !important
+            left: 293px
+
+        &__buttons
+            // чтобы корректнототображать элементы при отзывчивой вёрстке, задаём width:100%
+            width: 100%
+            
+            left: 0px
+            justify-content: center
+            // автоматический переход элемента на новую строку при сужении экрана
+            flex-wrap: wrap
+            // паддинг, чтобы отдалить нижний край секции
+            padding-bottom: 10px
+
+        button
+            margin-right: 10px
+            
+
+
+    // стилизуем футер
+
+    // корректируем отображение фото-гитары
+    .footer-section__main-photo
+        width: 25% !important
+        
+        bottom: 88px

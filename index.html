@@ -33,10 +33,18 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
+
 <body>
 
     <!-- первая секция -->
     <section class="main-section">
+
+        <!-- создаём гамбургер для мобильной версии сайта-->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
         <!-- лого и навигационное меню -->
         <div class="container main-section__nav-container">
@@ -63,16 +71,14 @@
                 <div class="ellipse__subtract"></div>
             </div>
 
-               <!-- создаём внутренний круг справа -->
-            <div class="main-section__first-ellipse ellipse">
-                <div class="ellipse__subtract"></div>
-            </div>
 
 <!--left-wrapper И right-wrapper ДОЛЖНЫ БЫЛИ НАЧИНАТЬСЯ С НАЗВАНИЯ main-section. ТО ЕСТЬ main-section__left-wrapper. В ТРЕТЬЕЙ СЕКЦИИ МЫ ЭТО ИСПРАВИМ -->
 
             <!-- левая часть, гитарист и фигуры -->
             <div class="left-wrapper">
-                <img class="left-wrapper__img" src="img/Guitar player photo.svg" alt="Guitar player" height="700px">
+                <img class="left-wrapper__img-guitar-figures" src="img/Group 2.svg" alt="">
+
+                <img class="left-wrapper__img" src="img/Guitar player photo.svg" alt="Guitar player">
 
                 <!-- прямоугольники -->
                 <div class="left-wrapper__rectangle-blue"></div>
@@ -83,34 +89,40 @@
 
             <!-- правая часть секции, иконки, кнопки, текст-->
             <div class="right-wrapper">
+
+                <!-- создаём внутренний круг -->
+            <div class="main-section__first-ellipse ellipse">
+                <div class="ellipse__subtract"></div>
+            </div>
+
                 <!-- web иконки -->
                 <div class="right-wrapper__web-icons web-icons">
                     <!-- создаём иконки с ссылками -->
                     <div class="web-icons__item">
                         <a href="https://www.instagram.com/" target="_blank">
-                            <img src="icons/instagramm 1.svg" alt="instagram">
+                            <img class="web-icons__logo" src="icons/instagramm 1.svg" alt="instagram">
                         </a>
                     </div>
                     <div class="web-icons__item">
                         <a href="https://vk.com" target="_blank">
-                            <img src="icons/vk 1.svg" alt="vkontakte">
+                            <img class="web-icons__logo" src="icons/vk 1.svg" alt="vkontakte">
                         </a>
                     </div>
                     <div class="web-icons__item">
                         <a href="https://www.skype.com/ru/" target="_blank">
-                            <img src="icons/skype.svg" alt="skype">
+                            <img class="web-icons__logo" src="icons/skype.svg" alt="skype">
                         </a>
                     </div>
                     <div class="web-icons__item">
                         <a href="https://web.telegram.org/" target="_blank">
-                            <img src="icons/telegramm.svg" alt="telegramm">
+                            <img class="web-icons__logo" src="icons/telegramm.svg" alt="telegramm">
                         </a>
                     </div>
                 </div>
 
                 <!-- создаём тайлтл и линию по методологии БЭМ + текст-->
                 <h1 class="right-wrapper__title title">Я Виктор
-                    <img class="title__line" src="img/Line 1.svg" alt="линию" style="left: 4px;">
+                    <img class="title__line title__line_main" src="img/Line 1.svg" alt="линию" style="left: 4px;">
                     <!-- второй вариант линии через css -->
                     <!-- <hr class="title__line"> -->
                 </h1>
@@ -141,6 +153,7 @@
         <div class="main-section__outside-ellipse ellipse ellipse_big">
             <div class="ellipse__subtract ellipse__subtract_big"></div>
         </div>
+
     </section>
 
 
@@ -152,7 +165,7 @@
 
             <!-- заголовок. переиспользуем из первой секции -->
             <h2 class="second-section__title title">Преподаю:
-                <img class="title__line" src="img/Line 1.svg" alt="линию" style="width: 414px;">
+                <img class="title__line title__line_second" src="img/Line 1.svg" alt="линию" style="width: 414px;">
             </h2>
             
             <!-- создаём блоки "гитары" второй секции -->
@@ -180,26 +193,26 @@
             <!-- создаём блок с наградами -->
             <div class="second-section__awards-box">
                 <!-- первая иконка -->
-                <div class="second-section__awards-item award-item">
+                <div class="second-section__awards-item award-item award-item_7-years">
                     <img class="award-item__img" src="icons/вторая секция/award-icon-1.svg" alt="">
                     <p class="award-item__text"><span class="spaner">7</span> <br>лет<br>преподавания</p>
                 </div>
 
                 <!-- вторая иконка -->
-                <div class="second-section__awards-item award-item">
+                <div class="second-section__awards-item award-item award-item_2000-hours">
                     <img class="award-item__img" src="icons/вторая секция/award-icon-2.svg" alt="">
                     <!-- оборачиваем число в <span>, чтобы увеличить размер -->
-                    <p class="award-item__text"> <span class="spaner">2000</span> <br>Часов<br>преподавания</p>
+                    <p class="award-item__text"> <span class="spaner">2000</span> <br>часов<br>обучения</p>
                 </div>
 
                 <!-- третья иконка -->
-                <div class="second-section__awards-item award-item">
+                <div class="second-section__awards-item award-item award-item_314-students">
                     <img class="award-item__img" src="icons/вторая секция/award-icon-3.svg" alt="">
                     <p class="award-item__text"><span class="spaner">314</span> <br>студентов</p>
                 </div>
 
                 <!-- четвёртая иконка -->
-                <div class="second-section__awards-item award-item">
+                <div class="second-section__awards-item award-item award-item_276-rewiews">
                     <img class="award-item__img" src="icons/вторая секция/award-icon-4.svg" alt="">
                     <p class="award-item__text"><span class="spaner">276</span> <br>отзывов на 5<br>звёзд</p>
                 </div>
@@ -228,7 +241,7 @@
 
                 <!-- заголовок-->
                 <h2 class="third-section__title title">Обучение
-                    <img class="title__line" src="img/Line 1.svg" alt="линию" style="width: 378px;">
+                    <img class="title__line title__line_third" src="img/Line 1.svg" alt="линию">
                 </h2>
 
             </div>
@@ -248,7 +261,7 @@
                 <!-- переисползуем кнопку и иконку с текстом-->
                 <div class="third-section__buttons button">
                     <!-- кнопка -->
-                    <button class="button__book-a-lesson">
+                    <button class="third-section__book-a-lesson button__book-a-lesson">
                         <a class="button__white-reference" href="#">Забронировать <br> урок
                         </a>
                     </button>
@@ -289,18 +302,15 @@
     <!-- создаём футер сайта -->
     <footer class="footer-section">
 
-        <!-- картинка грифа гитары -->
-        <img src="img/guitar-neck.svg" alt="гриф" class="footer-section__main-photo" style="width: 375px;">
+        <img src="img/guitar-neck.svg" alt="гриф" class="footer-section__main-photo" style="width: 371px;">
 
         <div class="container footer-section__content-container">
 
-            <!-- <img src="img/guitar-neck.svg" alt="гриф" class="footer-section__main-photo" style="width: 580px;"> -->
-
             <!-- правая часть -->
-            <div class="footer-section__right-wrapper">
+            <div class="footer-section__wrapper">
 
                 <!-- заголовок-->
-                <h2 class="third-section__title title" style="text-indent: 18px">Запишись на <br>пробный урок
+                <h2 class="footer-section__title title" style="text-indent: 18px">Запишись на <br>пробный урок
                 </h2>
 
                 <!-- web иконки -->
@@ -308,22 +318,22 @@
                     <!-- создаём иконки с ссылками -->
                     <div class="web-icons__item">
                         <a href="https://www.instagram.com/" target="_blank">
-                            <img src="icons/instagramm 1.svg" alt="instagram">
+                            <img class="web-icons__logo" src="icons/instagramm 1.svg" alt="instagram">
                         </a>
                     </div>
                     <div class="web-icons__item">
                         <a href="https://vk.com" target="_blank">
-                            <img src="icons/vk 1.svg" alt="vkontakte">
+                            <img class="web-icons__logo" src="icons/vk 1.svg" alt="vkontakte">
                         </a>
                     </div>
                     <div class="web-icons__item">
                         <a href="https://www.skype.com/ru/" target="_blank">
-                            <img src="icons/skype.svg" alt="skype">
+                            <img class="web-icons__logo" src="icons/skype.svg" alt="skype">
                         </a>
                     </div>
                     <div class="web-icons__item">
                         <a href="https://web.telegram.org/" target="_blank">
-                            <img src="icons/telegramm.svg" alt="telegramm">
+                            <img class="web-icons__logo" src="icons/telegramm.svg" alt="telegramm">
                         </a>
                     </div>
 
@@ -333,9 +343,8 @@
             </div>
 
         </div>
-
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
-
 </html>
