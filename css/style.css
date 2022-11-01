@@ -694,7 +694,7 @@ a:hover {
     right: -100%;
     top: 0;
     z-index: 25;
-    height: 100vh;
+    height: 100%;
     width: 50%;
     background: linear-gradient(45deg, #a8edea, #fed6e3);
     transition: 0.5s all;
