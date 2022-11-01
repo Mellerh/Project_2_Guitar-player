@@ -285,6 +285,7 @@ a:hover {
   position: relative;
   width: 355.63px;
   height: 360px;
+  overflow: hidden;
   background: #4E5B6D;
   border-radius: 64px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -300,7 +301,7 @@ a:hover {
 }
 .card-item__img_acoustic {
   position: relative;
-  left: -5px;
+  left: 10px;
 }
 .card-item__text {
   width: 240.61px;
@@ -486,7 +487,7 @@ a:hover {
     height: 280px;
   }
   .card-item__img_acoustic {
-    left: -18px;
+    left: 13px;
     bottom: 1px;
   }
   .award-item__text {
@@ -631,7 +632,7 @@ a:hover {
     height: 222px;
   }
   .card-item__img_acoustic {
-    left: -30px;
+    left: 9px;
     bottom: 1px;
   }
   .card-item__text {
@@ -696,7 +697,7 @@ a:hover {
     height: 100vh;
     width: 50%;
     background: linear-gradient(136.68deg, rgba(255, 126, 75, 0.8) 13.76%, rgba(53, 138, 255, 0.8) 49.71%, rgba(156, 156, 156, 0.8) 84.19%);
-    transition: 1s all;
+    transition: 0.5s all;
   }
   .nav-menu__list {
     height: 100%;
@@ -722,7 +723,7 @@ a:hover {
     display: block;
     background: black;
     margin-bottom: 5px;
-    transition: 0.8s all;
+    transition: 0.5s all;
   }
   .hamburger span:last-child {
     margin-bottom: 0px;
@@ -888,7 +889,7 @@ a:hover {
   }
   .card-item__img_acoustic {
     position: absolute;
-    left: -4px;
+    left: 39px;
   }
   .card-item_orange p {
     top: 73px;
@@ -928,6 +929,7 @@ a:hover {
     position: relative;
     left: 84px;
     flex-direction: row;
+    z-index: 1;
   }
   .button__book-a-lesson {
     margin-right: 30px;
@@ -1029,20 +1031,39 @@ a:hover {
   .button__text {
     font-size: 14px;
   }
+  .second-section__content-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .second-section__title {
+    padding-left: 1rem;
+  }
+  .title__line_second {
+    width: 184px !important;
+    left: 19px;
+  }
   .second-section__awards-box {
-    width: 100%;
-    justify-content: space-around;
+    width: 85%;
+    justify-content: space-between;
+    align-self: center;
     flex-flow: row wrap;
     left: 0px;
   }
-  .title__line_second {
-    width: 181px !important;
+  .award-item__img {
+    margin-right: 6px;
+    width: 47px;
+  }
+  .award-item__text {
+    font-size: 13px;
+  }
+  .award-item__text span {
+    font-size: 26px;
   }
   .card-item {
-    width: 80%;
+    width: 70%;
   }
   .card-item__text {
-    font-size: 6.6vw;
+    font-size: 6vw;
     width: 100%;
     height: 100%;
     display: flex;
@@ -1057,13 +1078,13 @@ a:hover {
     top: 0px;
   }
   .card-item__img {
-    width: 50%;
-    right: 20px;
+    top: 33px;
+    height: 202px;
   }
   .card-item__img_acoustic {
     top: 37px;
-    left: -19px;
-    height: 217px;
+    left: 20px;
+    height: 186px;
   }
   .third-section {
     min-height: 453px;

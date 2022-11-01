@@ -385,6 +385,8 @@ a
     width: 355.63px
     height: 360px
 
+    overflow: hidden
+
     background: #4E5B6D
     border-radius: 64px
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -404,7 +406,7 @@ a
     // модификатор. немного двигаем картинку гитары в третьей секции
     &__img_acoustic
         position: relative
-        left: -5px
+        left: 10px
         
     &__text
         // задаём параметры рамке с текстом
@@ -603,7 +605,7 @@ a
         &__img 
             height: 280px
         &__img_acoustic 
-            left: -18px
+            left: 13px
             bottom: 1px
     // награды
     .award-item__text 
@@ -711,15 +713,19 @@ a
     // вторая секция
     .second-section
         min-height: 501px
+        
         &__content-container 
             padding-top: 18px
+
     .second-section__first-ellipse 
         right: 115px
         top: -149px
         &__card-box 
             margin-bottom: 19px
+
     .title__line_second
         width: 333px !important
+
     .card-item 
         margin-right: 14px
         height: 258px
@@ -727,12 +733,13 @@ a
         &__img 
             height: 222px
         &__img_acoustic 
-            left: -30px
+            left: 9px
             bottom: 1px
         &__text 
             top: 100px
             left: 21px
             font-size: 25px
+
     .award-item__img 
         margin-right: 5px
         width: 54px
@@ -797,7 +804,7 @@ a
         background: linear-gradient(136.68deg, rgba(255, 126, 75, 0.8) 13.76%, rgba(53, 138, 255, 0.8) 49.71%, rgba(156, 156, 156, 0.8) 84.19%)
 
         // окно будет плавно выезжать
-        transition: 1s all
+        transition: 0.5s all
 
         // теперь задаём отображение самих слов в нав-контейнере
         &__list
@@ -836,7 +843,7 @@ a
                 margin-bottom: 0px
 
             // создаём плавную анимацию перехода из гамбургера в крестик и наоборот
-            transition: 0.8s all
+            transition: 0.5s all
 
     // меняем гамбургер на крестик с помощью модификатора
     .hamburger_active
@@ -1004,7 +1011,7 @@ a
             height: 249px
             &_acoustic
                 position: absolute
-                left: -4px
+                left: 39px
 
         // позиционриуем текст в оранжевой карточке через селектор p
         &_orange
@@ -1055,6 +1062,7 @@ a
             left: 84px
             // возвращаем горизонатльное отображение кнопок для третьей секции и выравниваем
             flex-direction: row
+            z-index: 1
 
     // стилизуем кнопку брониварония
     .button__book-a-lesson
@@ -1184,24 +1192,51 @@ a
 
     // стилизуем вторую секцию
     
+    .second-section__content-container
+        display: flex
+        flex-direction: column
+
+
+    .second-section__title
+        padding-left: 1rem
+    .title__line_second 
+        width: 184px !important
+        left: 19px
+
+
     .second-section__awards-box
-        width: 100%
-        justify-content: space-around 
+        // кард-боокс занимает 80% видимого пространства
+        width: 85%
+        
+        // задаём равномерное отображение между наградами
+        justify-content: space-between
+
+        // размещаем посередине страницы. работает только, если у внешней секции задан flex
+        align-self: center
 
         // иконки автоматически выстраиваются в ряд и переносятся на новую строку при сужении браузера   
         flex-flow: row wrap
         
         left: 0px
     
-    .title__line_second 
-        width: 181px !important
+    // уменьшаем расстояние между картинками наград и текстом, чтобы снизить веротяность переноса икнонок на следующую строку
+    .award-item__img 
+        margin-right: 6px
+        width: 47px
 
+    // уменьшаем размер основном текста и цифры, обёрнутые в span
+    .award-item__text 
+        font-size: 13px
+        span 
+            font-size: 26px
+
+    // стилизуем карточки с гитарами
     .card-item 
-        width: 80%
+        width: 70%
 
         &__text 
             // vh позволяет изменять размер текста в зависимости от размера экрана
-            font-size: 6.6vw
+            font-size: 6vw
 
             // див с текстом заполняет 100% пространства
             width: 100%
@@ -1225,12 +1260,13 @@ a
             top: 0px
 
         &__img
-            width: 50%
-            right: 20px
+            top: 33px
+            height: 202px
+
         &__img_acoustic 
             top: 37px
-            left: -19px
-            height: 217px
+            left: 20px
+            height: 186px
     
 
 
